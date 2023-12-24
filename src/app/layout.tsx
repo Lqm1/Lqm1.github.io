@@ -5,6 +5,7 @@ import Footer from '@/components/footer'
 import './globals.css'
 
 export const metadata: Metadata = {
+  metadataBase: new URL(process.env.NODE_ENV === 'production' ? 'https://c7e715d1b04b17683718fb1e8944cc28.github.io' : 'http://localhost:3000'),
   title: 'Lami',
   description: 'Lami - Python & TypeScript Developer',
   keywords: ['Lami', 'Python', 'TypeScript', 'Developer', 'FastAPI', 'Next.js'],
@@ -12,11 +13,11 @@ export const metadata: Metadata = {
     type: 'website',
     title: 'Lami',
     description: 'Lami - Python & TypeScript Developer',
-    url: 'https://c7e715d1b04b17683718fb1e8944cc28.github.io/',
+    url: '/',
     siteName: 'Lami',
     images: [
       {
-        url: 'https://c7e715d1b04b17683718fb1e8944cc28.github.io/open-graph.png',
+        url: '/open-graph.png',
         width: 1200,
         height: 630
       }
@@ -27,7 +28,13 @@ export const metadata: Metadata = {
     title: 'Lami',
     description: 'Lami - Python & TypeScript Developer',
     creator: '@l2',
-    images: ['https://c7e715d1b04b17683718fb1e8944cc28.github.io/open-graph.png']
+    images: [
+      {
+        url: '/open-graph.png',
+        width: 1200,
+        height: 630
+      }
+    ]
   }
 }
 
