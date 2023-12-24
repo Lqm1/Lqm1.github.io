@@ -51,15 +51,6 @@ export default function Home() {
           </div>
         </div>
       </div>
-      <div id="about">
-        <div className="max-w-2xl mx-auto">
-          <h2 className="text-3xl font-semibold mb-4">About Me</h2>
-          <p className="text-gray-700">
-            Hi, I'm Lami! I am a passionate Python & TypeScript developer, specializing in FastAPI and Next.js. I love building
-            web applications and exploring new technologies. In my free time, you can find me creating content on various platforms.
-          </p>
-        </div>
-      </div>
     </>
   )
 }
