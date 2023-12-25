@@ -23,7 +23,7 @@ export function TopArrow() {
   }, []);
 
   return (
-    <ScrollLink to="body" smooth={true}>
+    <ScrollLink to="body" href="#body" smooth={true}>
       <Button
         aria-label="Back to top"
         className={`fixed right-4 bottom-4 w-10 h-10 rounded-full bg-gray-900 text-white flex items-center justify-center shadow-lg hover:bg-gray-700 ${isTop ? 'opacity-0 pointer-events-none transition-opacity duration-300' : 'opacity-100 transition-opacity duration-300'}`}
