@@ -1,4 +1,6 @@
+"use client"
 import Link from 'next/link'
+import { Link as ScrollLink } from 'react-scroll'
 
 export default function Header() {
   return (
@@ -8,9 +10,9 @@ export default function Header() {
         <span className="sr-only">Portfolio</span>
       </Link>
       <nav className="hidden font-medium sm:flex flex-row items-center gap-5 text-sm lg:gap-6">
-        <Link className="font-bold" href="#home">Home</Link>
-        <Link className="text-gray-500 dark:text-gray-400" href="#about">About</Link>
-        <Link className="text-gray-500 dark:text-gray-400" href="#skills">Skills</Link>
+        <ScrollLink className="cursor-pointer font-bold" to="home" smooth={true}>Home</ScrollLink>
+        <ScrollLink className="cursor-pointer text-gray-500 dark:text-gray-400" to="about" smooth={true}>About</ScrollLink>
+        <ScrollLink className="cursor-pointer text-gray-500 dark:text-gray-400" to="skills" smooth={true}>Skills</ScrollLink>
       </nav>
     </header>
   )

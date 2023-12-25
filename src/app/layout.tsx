@@ -1,8 +1,9 @@
 import type { Metadata } from 'next'
 import { GoogleTagManager } from '@next/third-parties/google'
-import Header from '@/components/header'
-import Footer from '@/components/footer'
+import Header from '@/components/component/header'
+import Footer from '@/components/component/footer'
 import './globals.css'
+import { TopArrow } from '@/components/component/top-arrow'
 
 export const metadata: Metadata = {
   metadataBase: new URL(process.env.NODE_ENV === 'production' ? 'https://c7e715d1b04b17683718fb1e8944cc28.github.io' : 'http://localhost:3000'),
@@ -45,9 +46,10 @@ export default function RootLayout({
 }) {
   return (
     <html lang="ja">
-      <body className="bg-gray-100">
+      <body id="body" className="bg-gray-100">
         <Header />
         <main>{children}</main>
+        <TopArrow />
         <Footer />
       </body>
       <GoogleTagManager gtmId='GTM-NKZ4VKWK' />
