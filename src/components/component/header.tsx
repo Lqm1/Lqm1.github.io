@@ -10,9 +10,9 @@ export default function Header() {
         <span className="sr-only">Portfolio</span>
       </Link>
       <nav className="hidden font-medium sm:flex flex-row items-center gap-5 text-sm lg:gap-6">
-        <ScrollLink className="cursor-pointer font-bold" to="home" smooth={true}>Home</ScrollLink>
-        <ScrollLink className="cursor-pointer text-gray-500 dark:text-gray-400" to="about" smooth={true}>About</ScrollLink>
-        <ScrollLink className="cursor-pointer text-gray-500 dark:text-gray-400" to="skills" smooth={true}>Skills</ScrollLink>
+        <ScrollLink className="cursor-pointer font-bold" to="home" href="#home" smooth={true}>Home</ScrollLink>
+        <ScrollLink className="cursor-pointer text-gray-500 dark:text-gray-400" to="about" href="#about" smooth={true}>About</ScrollLink>
+        <ScrollLink className="cursor-pointer text-gray-500 dark:text-gray-400" to="skills" href="#skills" smooth={true}>Skills</ScrollLink>
       </nav>
     </header>
   )
