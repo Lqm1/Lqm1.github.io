@@ -114,7 +114,7 @@ export default function Home() {
                 仕事においては、お客様やチームメンバーと協力し、課題に対して前向きに取り組みます。新しいプロジェクトに挑戦し、技術的な課題に立ち向かうことが得意です。<br />
                 お互いに成長し合える環境で、チームとともに新たな可能性を追求することが私のモチベーションです。<br /><br />
                 趣味、そして好きなことはK-POPアイドルの<Link className="text-blue-500" href="https://ive-official.jp/mob/index.php">IVE</Link>を推すことです。IVE以外にも<Link className="text-blue-500" href="https://www.le-sserafim.jp/">LE SSERAFIM</Link>や<Link className="text-blue-500" href="https://www.newjeans.jp/">NewJeans</Link>なども好きで、よくライブに足を運んでいます。音楽は私にとって特別な時間を提供してくれます。<br />
-                ライブ(<Link className="text-blue-500" href="https://ive-official.jp/mob/pageShw.php?site=DIVE&ima=1046&cd=show_what_i_have">IVE THE 1ST WORLD TOUR "SHOW WHAT i HAVE" IN JAPAN</Link>)の雰囲気やIVEの魅力を伝えたいと思い、その時の様子を写真に収めました。右側にはライブ会場(<Link className="text-blue-500" href="https://k-arena.com/">Kアリーナ横浜</Link>)の外で撮影した、記念撮影スポットでの写真があります。<br />
+                ライブ(<Link className="text-blue-500" href="https://ive-official.jp/mob/pageShw.php?site=DIVE&ima=1046&cd=show_what_i_have">IVE THE 1ST WORLD TOUR {'"'}SHOW WHAT i HAVE{'"'} IN JAPAN</Link>)の雰囲気やIVEの魅力を伝えたいと思い、その時の様子を写真に収めました。右側にはライブ会場(<Link className="text-blue-500" href="https://k-arena.com/">Kアリーナ横浜</Link>)の外で撮影した、記念撮影スポットでの写真があります。<br />
                 ライブ会場内での撮影は禁止されていてできませんでしたが、会場外での素敵な思い出を残すことができました。
               </p>
               <div className="w-full md:w-1/2">
