@@ -46,9 +46,9 @@ export default function RootLayout({
 }) {
   return (
     <html lang="ja">
-      <body id="body" className="bg-gray-100">
+      <body id="body" className="bg-gray-100 flex flex-col min-h-screen">
         <Header />
-        <main>{children}</main>
+        <main className="flex flex-col flex-1">{children}</main>
         <TopArrow />
         <Footer />
       </body>
