@@ -1,4 +1,5 @@
 "use client";
+import { motion } from "framer-motion";
 
 const skills = {
 	languages: [
@@ -29,28 +30,90 @@ const skills = {
 };
 
 export default function Skills() {
+	const containerVariants = {
+		hidden: { opacity: 0 },
+		visible: {
+			opacity: 1,
+			transition: {
+				staggerChildren: 0.2,
+			},
+		},
+	};
+
+	const cardVariants = {
+		hidden: { opacity: 0, y: 50 },
+		visible: {
+			opacity: 1,
+			y: 0,
+			transition: {
+				type: "spring" as const,
+				stiffness: 100,
+				damping: 10,
+			},
+		},
+	};
+
+	const skillVariants = {
+		hidden: { opacity: 0, x: -20 },
+		visible: {
+			opacity: 1,
+			x: 0,
+			transition: {
+				type: "spring" as const,
+				stiffness: 100,
+				damping: 10,
+			},
+		},
+	};
+
 	return (
 		<section
 			id="skills"
 			className="py-20 px-6 bg-white/50 dark:bg-slate-800/50 backdrop-blur-sm"
 		>
 			<div className="max-w-6xl mx-auto">
-				<div className="text-center mb-12">
-					<h2 className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-indigo-600 to-purple-600 bg-clip-text text-transparent mb-4">
+				<motion.div
+					className="text-center mb-12"
+					initial="hidden"
+					whileInView="visible"
+					viewport={{ once: true }}
+					variants={containerVariants}
+				>
+					<motion.h2
+						className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-indigo-600 to-purple-600 bg-clip-text text-transparent mb-4"
+						variants={cardVariants}
+					>
 						スキル
-					</h2>
-					<p className="text-lg text-slate-600 dark:text-slate-400 max-w-2xl mx-auto">
+					</motion.h2>
+					<motion.p
+						className="text-lg text-slate-600 dark:text-slate-400 max-w-2xl mx-auto"
+						variants={cardVariants}
+					>
 						日々学び続ける技術たち。新しいことに挑戦することが好きです。
-					</p>
-				</div>
+					</motion.p>
+				</motion.div>
 
-				<div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+				<motion.div
+					className="grid md:grid-cols-2 lg:grid-cols-4 gap-8"
+					initial="hidden"
+					whileInView="visible"
+					viewport={{ once: true }}
+					variants={containerVariants}
+				>
 					{Object.entries(skills).map(([category, items]) => (
-						<div
+						<motion.div
 							key={category}
-							className="bg-white dark:bg-slate-800 rounded-2xl p-6 shadow-lg hover:shadow-xl transition-shadow"
+							variants={cardVariants}
+							whileHover={{
+								y: -5,
+								transition: { type: "spring", stiffness: 300 },
+							}}
+							className="bg-white dark:bg-slate-800 rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300"
 						>
-							<h3 className="text-xl font-bold text-slate-800 dark:text-slate-200 mb-4 capitalize">
+							<motion.h3
+								className="text-xl font-bold text-slate-800 dark:text-slate-200 mb-4 capitalize"
+								variants={skillVariants}
+							>
 								{category === "languages"
 									? "言語"
 									: category === "frontend"
@@ -58,14 +121,28 @@ export default function Skills() {
 										: category === "backend"
 											? "バックエンド"
 											: "ツール"}
-							</h3>
+							</motion.h3>
 
-							<div className="space-y-4">
+							<motion.div className="space-y-4" variants={containerVariants}>
 								{items.map((skill) => (
-									<div key={skill.name} className="space-y-2">
+									<motion.div
+										key={skill.name}
+										variants={skillVariants}
+										className="space-y-2"
+									>
 										<div className="flex items-center justify-between">
 											<div className="flex items-center gap-2">
-												<span className="text-lg">{skill.icon}</span>
+												<motion.span
+													className="text-lg"
+													animate={{ rotate: [0, 10, -10, 0] }}
+													transition={{
+														duration: 2,
+														repeat: Infinity,
+														ease: "easeInOut",
+													}}
+												>
+													{skill.icon}
+												</motion.span>
 												<span className="font-medium text-slate-700 dark:text-slate-300">
 													{skill.name}
 												</span>
@@ -74,39 +151,72 @@ export default function Skills() {
 												{skill.level}%
 											</span>
 										</div>
-										<div className="w-full bg-slate-200 dark:bg-slate-700 rounded-full h-2">
-											<div
-												className="bg-gradient-to-r from-indigo-600 to-purple-600 h-2 rounded-full transition-all duration-1000"
-												style={{ width: `${skill.level}%` }}
-											></div>
-										</div>
-									</div>
+										<motion.div
+											className="w-full bg-slate-200 dark:bg-slate-700 rounded-full h-2 overflow-hidden"
+											initial={{ opacity: 0 }}
+											whileInView={{ opacity: 1 }}
+											transition={{ delay: 0.5 }}
+										>
+											<motion.div
+												className="bg-gradient-to-r from-indigo-600 to-purple-600 h-2 rounded-full"
+												initial={{ width: 0 }}
+												whileInView={{ width: `${skill.level}%` }}
+												transition={{
+													duration: 1.5,
+													delay: 0.5,
+													ease: "easeOut",
+												}}
+											/>
+										</motion.div>
+									</motion.div>
 								))}
-							</div>
-						</div>
+							</motion.div>
+						</motion.div>
 					))}
-				</div>
+				</motion.div>
 
-				<div className="mt-12 text-center">
+				<motion.div
+					className="mt-12 text-center"
+					initial={{ opacity: 0, y: 20 }}
+					whileInView={{ opacity: 1, y: 0 }}
+					transition={{ delay: 0.5 }}
+				>
 					<div className="bg-gradient-to-r from-indigo-100 to-purple-100 dark:from-indigo-900/20 dark:to-purple-900/20 rounded-2xl p-8">
-						<h3 className="text-2xl font-bold text-slate-800 dark:text-slate-200 mb-4">
+						<motion.h3
+							className="text-2xl font-bold text-slate-800 dark:text-slate-200 mb-4"
+							initial={{ opacity: 0, y: -20 }}
+							whileInView={{ opacity: 1, y: 0 }}
+							transition={{ delay: 0.6 }}
+						>
 							学習中の技術
-						</h3>
-						<div className="flex flex-wrap gap-3 justify-center">
+						</motion.h3>
+						<motion.div
+							className="flex flex-wrap gap-3 justify-center"
+							initial={{ opacity: 0 }}
+							whileInView={{ opacity: 1 }}
+							transition={{ delay: 0.7, staggerChildren: 0.1 }}
+						>
 							{["AWS", "GraphQL", "Transformers", "PyTorch"].map((tech) => (
-								<span
+								<motion.span
 									key={tech}
 									className="px-4 py-2 bg-white dark:bg-slate-800 text-indigo-600 dark:text-indigo-400 rounded-full font-medium shadow-sm"
+									whileHover={{ scale: 1.05 }}
+									transition={{ type: "spring", stiffness: 400 }}
 								>
 									{tech}
-								</span>
+								</motion.span>
 							))}
-						</div>
-						<p className="text-slate-600 dark:text-slate-400 mt-4">
+						</motion.div>
+						<motion.p
+							className="text-slate-600 dark:text-slate-400 mt-4"
+							initial={{ opacity: 0 }}
+							whileInView={{ opacity: 1 }}
+							transition={{ delay: 0.8 }}
+						>
 							セキュリティ対策や高速化技術に興味を持ち、常に新しい技術を学び続けています
-						</p>
+						</motion.p>
 					</div>
-				</div>
+				</motion.div>
 			</div>
 		</section>
 	);

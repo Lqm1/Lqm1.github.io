@@ -2,6 +2,7 @@
 import { faGithub } from "@fortawesome/free-brands-svg-icons";
 import { faExternalLink } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { motion } from "framer-motion";
 
 const projects = [
 	{
@@ -39,87 +40,178 @@ const projects = [
 ];
 
 export default function Projects() {
+	const containerVariants = {
+		hidden: { opacity: 0 },
+		visible: {
+			opacity: 1,
+			transition: {
+				staggerChildren: 0.2,
+			},
+		},
+	};
+
+	const cardVariants = {
+		hidden: { opacity: 0, y: 50 },
+		visible: {
+			opacity: 1,
+			y: 0,
+			transition: {
+				type: "spring" as const,
+				stiffness: 100,
+				damping: 10,
+			},
+		},
+	};
+
 	return (
 		<section id="projects" className="py-20 px-6">
 			<div className="max-w-6xl mx-auto">
-				<div className="text-center mb-12">
-					<h2 className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-indigo-600 to-purple-600 bg-clip-text text-transparent mb-4">
+				<motion.div
+					className="text-center mb-12"
+					initial="hidden"
+					whileInView="visible"
+					viewport={{ once: true }}
+					variants={containerVariants}
+				>
+					<motion.h2
+						className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-indigo-600 to-purple-600 bg-clip-text text-transparent mb-4"
+						variants={cardVariants}
+					>
 						制作物
-					</h2>
-					<p className="text-lg text-slate-600 dark:text-slate-400 max-w-2xl mx-auto">
+					</motion.h2>
+					<motion.p
+						className="text-lg text-slate-600 dark:text-slate-400 max-w-2xl mx-auto"
+						variants={cardVariants}
+					>
 						これまでに携わったプロジェクトたち。技術で人々の生活を少しでも便利にするための挑戦の記録です。
-					</p>
-				</div>
+					</motion.p>
+				</motion.div>
 
-				<div className="grid md:grid-cols-2 gap-8">
-					{projects.map((project) => (
-						<div
+				<motion.div
+					className="grid md:grid-cols-2 gap-8"
+					initial="hidden"
+					whileInView="visible"
+					viewport={{ once: true }}
+					variants={containerVariants}
+				>
+					{projects.map((project, index) => (
+						<motion.div
 							key={project.title}
-							className="group bg-white dark:bg-slate-800 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 overflow-hidden"
+							variants={cardVariants}
+							whileHover={{
+								y: -8,
+								transition: { type: "spring", stiffness: 300 },
+							}}
+							className="group bg-white dark:bg-slate-800 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 overflow-hidden relative"
 						>
-							<div className="p-8">
+							<motion.div className="absolute inset-0 bg-gradient-to-br from-indigo-600/10 to-purple-600/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+
+							<div className="relative z-10 p-8">
 								<div className="flex items-start justify-between mb-4">
-									<div className="text-4xl">{project.emoji}</div>
+									<motion.div
+										className="text-4xl"
+										animate={{ rotate: [0, 10, -10, 0] }}
+										transition={{
+											duration: 2,
+											repeat: Infinity,
+											ease: "easeInOut",
+										}}
+									>
+										{project.emoji}
+									</motion.div>
 									<div className="flex gap-2">
 										{project.repository && (
-											<a
+											<motion.a
 												href={project.repository}
 												target="_blank"
 												rel="noopener noreferrer"
 												className="p-2 text-slate-600 hover:text-indigo-600 dark:text-slate-400 dark:hover:text-indigo-400 transition-colors"
+												whileHover={{ scale: 1.1 }}
+												whileTap={{ scale: 0.9 }}
 											>
 												<FontAwesomeIcon icon={faGithub} size="lg" />
-											</a>
+											</motion.a>
 										)}
 										{project.website && (
-											<a
+											<motion.a
 												href={project.website}
 												target="_blank"
 												rel="noopener noreferrer"
 												className="p-2 text-slate-600 hover:text-indigo-600 dark:text-slate-400 dark:hover:text-indigo-400 transition-colors"
+												whileHover={{ scale: 1.1 }}
+												whileTap={{ scale: 0.9 }}
 											>
 												<FontAwesomeIcon icon={faExternalLink} size="lg" />
-											</a>
+											</motion.a>
 										)}
 									</div>
 								</div>
 
-								<h3 className="text-2xl font-bold text-slate-800 dark:text-slate-200 mb-3">
+								<motion.h3
+									className="text-2xl font-bold text-slate-800 dark:text-slate-200 mb-3"
+									initial={{ opacity: 0, x: -20 }}
+									whileInView={{ opacity: 1, x: 0 }}
+									transition={{ delay: index * 0.1 + 0.2 }}
+								>
 									{project.title}
-								</h3>
+								</motion.h3>
 
-								<p className="text-slate-600 dark:text-slate-400 mb-4 leading-relaxed">
+								<motion.p
+									className="text-slate-600 dark:text-slate-400 mb-4 leading-relaxed"
+									initial={{ opacity: 0, y: 20 }}
+									whileInView={{ opacity: 1, y: 0 }}
+									transition={{ delay: index * 0.1 + 0.3 }}
+								>
 									{project.description}
-								</p>
+								</motion.p>
 
-								<div className="flex flex-wrap gap-2">
+								<motion.div
+									className="flex flex-wrap gap-2"
+									initial={{ opacity: 0, y: 20 }}
+									whileInView={{ opacity: 1, y: 0 }}
+									transition={{ delay: index * 0.1 + 0.4 }}
+								>
 									{project.tech.map((tech) => (
-										<span
+										<motion.span
 											key={tech}
 											className="px-3 py-1 bg-indigo-100 dark:bg-indigo-900/30 text-indigo-700 dark:text-indigo-300 rounded-full text-sm font-medium"
+											whileHover={{ scale: 1.05 }}
+											transition={{ type: "spring", stiffness: 400 }}
 										>
 											{tech}
-										</span>
+										</motion.span>
 									))}
-								</div>
+								</motion.div>
 							</div>
 
-							<div className="h-1 bg-gradient-to-r from-indigo-600 to-purple-600 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"></div>
-						</div>
+							<motion.div
+								className="h-1 bg-gradient-to-r from-indigo-600 to-purple-600 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"
+								initial={{ scaleX: 0 }}
+								whileInView={{ scaleX: 1 }}
+								transition={{ delay: index * 0.1 + 0.5, duration: 0.5 }}
+							/>
+						</motion.div>
 					))}
-				</div>
+				</motion.div>
 
-				<div className="text-center mt-12">
-					<a
+				<motion.div
+					className="text-center mt-12"
+					initial={{ opacity: 0, y: 20 }}
+					whileInView={{ opacity: 1, y: 0 }}
+					transition={{ delay: 0.5 }}
+				>
+					<motion.a
 						href="https://github.com/Lqm1"
 						target="_blank"
 						rel="noopener noreferrer"
 						className="inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-indigo-600 to-purple-600 text-white rounded-full font-semibold hover:from-indigo-700 hover:to-purple-700 transition-all duration-300 transform hover:scale-105"
+						whileHover={{ scale: 1.05 }}
+						whileTap={{ scale: 0.95 }}
 					>
 						<FontAwesomeIcon icon={faGithub} size="lg" />
 						もっと見る
-					</a>
-				</div>
+					</motion.a>
+				</motion.div>
 			</div>
 		</section>
 	);

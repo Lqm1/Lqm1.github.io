@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
+import BackToTop from "./components/BackToTop";
+import CustomCursor from "./components/CustomCursor";
 import "./globals.css";
 
 const inter = Inter({ subsets: ["latin"] });
@@ -34,6 +36,8 @@ export default function RootLayout({
 		<html lang="ja">
 			<body className={`${inter.className} antialiased scroll-smooth`}>
 				{children}
+				<BackToTop />
+				<CustomCursor />
 			</body>
 		</html>
 	);
