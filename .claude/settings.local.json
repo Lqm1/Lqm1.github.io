@@ -1,0 +1,17 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(mkdir:*)",
+      "WebFetch(domain:lami.zip)",
+      "Bash(bun add:*)",
+      "Bash(bun dev)",
+      "Bash(npm run biome:check:*)",
+      "Bash(bun run:*)",
+      "Bash(npx biome check:*)",
+      "Bash(bunx:*)",
+      "WebFetch(domain:yomi-chan.jp)",
+      "WebFetch(domain:github.com)"
+    ],
+    "deny": []
+  }
+}
