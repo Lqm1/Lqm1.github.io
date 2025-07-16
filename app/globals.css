@@ -100,6 +100,11 @@ html {
 	box-shadow: 0 0 20px rgba(99, 102, 241, 0.7);
 }
 
+/* Custom word-break utility */
+.auto-phrase {
+	word-break: auto-phrase;
+}
+
 /* Custom cursor styles */
 @media (hover: hover) and (pointer: fine) {
 	body {

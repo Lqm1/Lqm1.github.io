@@ -87,7 +87,7 @@ export default function About() {
 						私について
 					</motion.h2>
 					<motion.p
-						className="text-lg text-slate-600 dark:text-slate-400 max-w-2xl mx-auto"
+						className="text-lg text-slate-600 dark:text-slate-400 max-w-2xl mx-auto auto-phrase"
 						variants={itemVariants}
 					>
 						技術で人々の生活を少しでも便利にしたい、そんな思いでコードを書いています
@@ -104,15 +104,15 @@ export default function About() {
 					>
 						<div className="prose prose-lg dark:prose-invert text-slate-700 dark:text-slate-300">
 							<motion.p
-								className="text-lg leading-relaxed"
+								className="text-lg leading-relaxed auto-phrase"
 								variants={itemVariants}
 							>
 								こんにちは！Lamiです。Web開発が大好きなエンジニアです。
-								高校生の頃にプログラミングに出会って以来、技術で人々の生活を豊かにすることに情熱を燃やしています。
+								中学生の頃にプログラミングに出会って以来、技術で人々の生活を豊かにすることに情熱を燃やしています。
 							</motion.p>
 
 							<motion.p
-								className="text-lg leading-relaxed"
+								className="text-lg leading-relaxed auto-phrase"
 								variants={itemVariants}
 							>
 								TypeScriptとPythonが得意で、特にNext.jsでのフロントエンド開発と、FastAPIを使ったバックエンド開発に注力しています。
@@ -120,7 +120,7 @@ export default function About() {
 							</motion.p>
 
 							<motion.p
-								className="text-lg leading-relaxed"
+								className="text-lg leading-relaxed auto-phrase"
 								variants={itemVariants}
 							>
 								K-POPとアニメが大好きです！IVEやaespaの曲を聴きながらコードを書くのが日課です。

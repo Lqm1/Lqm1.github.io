@@ -111,7 +111,7 @@ export default function Contact() {
 						お問い合わせ
 					</motion.h2>
 					<motion.p
-						className="text-lg text-slate-600 dark:text-slate-400"
+						className="text-lg text-slate-600 dark:text-slate-400 auto-phrase"
 						variants={itemVariants}
 					>
 						お仕事の話でも、技術の話でも、何でも気軽に話しかけてください
@@ -132,7 +132,7 @@ export default function Contact() {
 							連絡先
 						</motion.h3>
 						<motion.p
-							className="text-slate-600 dark:text-slate-400 mb-6 leading-relaxed"
+							className="text-slate-600 dark:text-slate-400 mb-6 leading-relaxed auto-phrase"
 							variants={itemVariants}
 						>
 							新しいプロジェクトに挑戦することを常に楽しみにしています。
@@ -266,7 +266,7 @@ export default function Contact() {
 					transition={{ delay: 0.5 }}
 				>
 					<motion.p
-						className="text-sm text-slate-500 dark:text-slate-400"
+						className="text-sm text-slate-500 dark:text-slate-400 auto-phrase"
 						initial={{ opacity: 0 }}
 						whileInView={{ opacity: 1 }}
 						transition={{ delay: 0.7 }}

@@ -100,10 +100,11 @@ export default function Hero3D() {
 				</motion.div>
 
 				<motion.p
-					className="text-lg text-slate-400 mb-12 max-w-2xl mx-auto leading-relaxed"
+					className="text-lg text-slate-400 mb-12 max-w-2xl mx-auto leading-relaxed auto-phrase"
 					variants={itemVariants}
 				>
 					TypeScriptとPythonで、素敵なものを作るのが好きなエンジニアです。
+					<br />
 					K-POPを聴きながらコードを書くのが日課で、IVEやaespaの曲が特に好きです。
 				</motion.p>
 

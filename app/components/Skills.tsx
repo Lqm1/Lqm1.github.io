@@ -86,7 +86,7 @@ export default function Skills() {
 						スキル
 					</motion.h2>
 					<motion.p
-						className="text-lg text-slate-600 dark:text-slate-400 max-w-2xl mx-auto"
+						className="text-lg text-slate-600 dark:text-slate-400 max-w-2xl mx-auto auto-phrase"
 						variants={cardVariants}
 					>
 						日々学び続ける技術たち。新しいことに挑戦することが好きです。
@@ -208,7 +208,7 @@ export default function Skills() {
 							))}
 						</motion.div>
 						<motion.p
-							className="text-slate-600 dark:text-slate-400 mt-4"
+							className="text-slate-600 dark:text-slate-400 mt-4 auto-phrase"
 							initial={{ opacity: 0 }}
 							whileInView={{ opacity: 1 }}
 							transition={{ delay: 0.8 }}

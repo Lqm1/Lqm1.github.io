@@ -80,7 +80,7 @@ export default function Projects() {
 						制作物
 					</motion.h2>
 					<motion.p
-						className="text-lg text-slate-600 dark:text-slate-400 max-w-2xl mx-auto"
+						className="text-lg text-slate-600 dark:text-slate-400 max-w-2xl mx-auto auto-phrase"
 						variants={cardVariants}
 					>
 						これまでに携わったプロジェクトたち。技術で人々の生活を少しでも便利にするための挑戦の記録です。
@@ -157,7 +157,7 @@ export default function Projects() {
 								</motion.h3>
 
 								<motion.p
-									className="text-slate-600 dark:text-slate-400 mb-4 leading-relaxed"
+									className="text-slate-600 dark:text-slate-400 mb-4 leading-relaxed auto-phrase"
 									initial={{ opacity: 0, y: 20 }}
 									whileInView={{ opacity: 1, y: 0 }}
 									transition={{ delay: index * 0.1 + 0.3 }}
