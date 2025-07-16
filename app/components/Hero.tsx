@@ -3,7 +3,7 @@ import { motion, type Variants } from "framer-motion";
 import { ChevronDown, MousePointer2 } from "lucide-react";
 import { useEffect, useState } from "react";
 
-export default function Hero3D() {
+export default function Hero() {
 	const [text, setText] = useState("");
 	const [showCursor, setShowCursor] = useState(true);
 	const fullText = "プログラミングで、世界をちょっとだけ良くする";
@@ -129,7 +129,7 @@ export default function Hero3D() {
 						whileTap={{ scale: 0.95 }}
 					>
 						<span className="relative z-10">話しかける</span>
-						<div className="absolute inset-0 bg-indigo-400 scale-0 group-hover:scale-100 transition-transform duration-300 origin-left" />
+						<div className="absolute inset-0 bg-indigo-400 scale-0 group-hover:scale-100 transition-transform duration-300 origin-center rounded-full" />
 					</motion.a>
 				</motion.div>
 
