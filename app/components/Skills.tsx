@@ -1,5 +1,5 @@
 "use client";
-import { motion } from "framer-motion";
+import { motion, type Variants } from "framer-motion";
 
 const skills = {
 	languages: [
@@ -30,7 +30,7 @@ const skills = {
 };
 
 export default function Skills() {
-	const containerVariants = {
+	const containerVariants: Variants = {
 		hidden: { opacity: 0 },
 		visible: {
 			opacity: 1,
@@ -40,26 +40,26 @@ export default function Skills() {
 		},
 	};
 
-	const cardVariants = {
+	const cardVariants: Variants = {
 		hidden: { opacity: 0, y: 50 },
 		visible: {
 			opacity: 1,
 			y: 0,
 			transition: {
-				type: "spring" as const,
+				type: "spring",
 				stiffness: 100,
 				damping: 10,
 			},
 		},
 	};
 
-	const skillVariants = {
+	const skillVariants: Variants = {
 		hidden: { opacity: 0, x: -20 },
 		visible: {
 			opacity: 1,
 			x: 0,
 			transition: {
-				type: "spring" as const,
+				type: "spring",
 				stiffness: 100,
 				damping: 10,
 			},

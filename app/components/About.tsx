@@ -1,8 +1,8 @@
 "use client";
-import { motion } from "framer-motion";
+import { motion, type Variants } from "framer-motion";
 
 export default function About() {
-	const containerVariants = {
+	const containerVariants: Variants = {
 		hidden: { opacity: 0 },
 		visible: {
 			opacity: 1,
@@ -12,26 +12,26 @@ export default function About() {
 		},
 	};
 
-	const itemVariants = {
+	const itemVariants: Variants = {
 		hidden: { opacity: 0, y: 50 },
 		visible: {
 			opacity: 1,
 			y: 0,
 			transition: {
-				type: "spring" as const,
+				type: "spring",
 				stiffness: 100,
 				damping: 10,
 			},
 		},
 	};
 
-	const cardVariants = {
+	const cardVariants: Variants = {
 		hidden: { opacity: 0, x: -50 },
 		visible: {
 			opacity: 1,
 			x: 0,
 			transition: {
-				type: "spring" as const,
+				type: "spring",
 				stiffness: 100,
 				damping: 10,
 				delay: 0.3,
@@ -39,13 +39,13 @@ export default function About() {
 		},
 	};
 
-	const imageVariants = {
+	const imageVariants: Variants = {
 		hidden: { opacity: 0, x: 50 },
 		visible: {
 			opacity: 1,
 			x: 0,
 			transition: {
-				type: "spring" as const,
+				type: "spring",
 				stiffness: 100,
 				damping: 10,
 				delay: 0.5,
@@ -53,13 +53,13 @@ export default function About() {
 		},
 	};
 
-	const statVariants = {
+	const statVariants: Variants = {
 		hidden: { opacity: 0, scale: 0.8 },
 		visible: {
 			opacity: 1,
 			scale: 1,
 			transition: {
-				type: "spring" as const,
+				type: "spring",
 				stiffness: 200,
 				damping: 15,
 				delay: 0.7,

@@ -2,7 +2,7 @@
 import { faGithub } from "@fortawesome/free-brands-svg-icons";
 import { faExternalLink } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { motion } from "framer-motion";
+import { motion, type Variants } from "framer-motion";
 
 const projects = [
 	{
@@ -40,7 +40,7 @@ const projects = [
 ];
 
 export default function Projects() {
-	const containerVariants = {
+	const containerVariants: Variants = {
 		hidden: { opacity: 0 },
 		visible: {
 			opacity: 1,
@@ -50,13 +50,13 @@ export default function Projects() {
 		},
 	};
 
-	const cardVariants = {
+	const cardVariants: Variants = {
 		hidden: { opacity: 0, y: 50 },
 		visible: {
 			opacity: 1,
 			y: 0,
 			transition: {
-				type: "spring" as const,
+				type: "spring",
 				stiffness: 100,
 				damping: 10,
 			},

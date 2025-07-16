@@ -6,7 +6,7 @@ import {
 } from "@fortawesome/free-brands-svg-icons";
 import { faEnvelope } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { motion } from "framer-motion";
+import { motion, type Variants } from "framer-motion";
 import { Mail, Send } from "lucide-react";
 import { useState } from "react";
 
@@ -57,7 +57,7 @@ export default function Contact() {
 		}, 1000);
 	};
 
-	const containerVariants = {
+	const containerVariants: Variants = {
 		hidden: { opacity: 0 },
 		visible: {
 			opacity: 1,
@@ -67,26 +67,26 @@ export default function Contact() {
 		},
 	};
 
-	const itemVariants = {
+	const itemVariants: Variants = {
 		hidden: { opacity: 0, y: 50 },
 		visible: {
 			opacity: 1,
 			y: 0,
 			transition: {
-				type: "spring" as const,
+				type: "spring",
 				stiffness: 100,
 				damping: 10,
 			},
 		},
 	};
 
-	const formVariants = {
+	const formVariants: Variants = {
 		hidden: { opacity: 0, x: 50 },
 		visible: {
 			opacity: 1,
 			x: 0,
 			transition: {
-				type: "spring" as const,
+				type: "spring",
 				stiffness: 100,
 				damping: 10,
 				delay: 0.3,
