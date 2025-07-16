@@ -178,7 +178,7 @@ export default function Hero3D() {
 
 			{/* Floating 3D elements */}
 			<motion.div
-				className="absolute top-20 right-20 text-4xl opacity-20"
+				className="absolute top-10 right-4 md:top-20 md:right-20 text-2xl md:text-4xl opacity-20"
 				animate={{
 					y: [0, -20, 0],
 					rotate: [0, 180, 360],
@@ -189,7 +189,7 @@ export default function Hero3D() {
 			</motion.div>
 
 			<motion.div
-				className="absolute bottom-20 left-20 text-4xl opacity-20"
+				className="absolute bottom-10 left-4 md:bottom-20 md:left-20 text-2xl md:text-4xl opacity-20"
 				animate={{
 					y: [0, 20, 0],
 					rotate: [0, -180, -360],
