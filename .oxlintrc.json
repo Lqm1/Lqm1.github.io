@@ -132,5 +132,8 @@
         "prefer-spread": "error"
       }
     }
-  ]
+  ],
+  "options": {
+    "typeAware": true
+  }
 }
