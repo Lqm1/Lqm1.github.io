@@ -11,6 +11,11 @@
       "sourceType": "github",
       "computedHash": "1f852a179bed024d1a65c73d345436ab28399f586e34fdcfd9602ed2c73d1fdc"
     },
+    "shadcn": {
+      "source": "shadcn/ui",
+      "sourceType": "github",
+      "computedHash": "77faba608ea949351d1757e29e6cb726f6ec5937f7595be0593038a7d2d76bb9"
+    },
     "vercel-react-best-practices": {
       "source": "vercel-labs/agent-skills",
       "sourceType": "github",
